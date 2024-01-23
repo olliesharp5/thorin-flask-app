@@ -5,7 +5,7 @@ from flask import Flask, render_template
 # creating an instance of this and storing it in a variable called 'app'
 app = Flask(__name__)
 
-
+# routes for pages
 @app.route("/")
 def index():
     return render_template("index.html")
