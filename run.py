@@ -1,7 +1,7 @@
 import os
 import json
 # importing the Flask class
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # creating an instance of this and storing it in a variable called 'app'
 app = Flask(__name__)
@@ -33,6 +33,8 @@ def about_member(member_name):
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        print(request.form.get("name"))
     return render_template("contact.html", page_title="Contact")
 
 
